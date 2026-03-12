@@ -1,0 +1,566 @@
+/* =========================
+   HEADER
+========================= */
+
+.sc-print{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin-bottom:10px;
+flex-wrap:wrap;
+}
+
+.sc-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:0px;
+}
+
+.sc-logo img{
+max-height:55px;
+width:auto;
+margin:0;
+border: 0px solid var(--sc-primary);
+}
+
+.sc-month{
+font-size:46px;
+margin:0;
+color:var(--sc-primary);
+font-weight:700;
+text-align:right;
+letter-spacing:.1px;
+}
+
+.sc-month-wrap{
+flex-grow:1;
+text-align:center;
+}
+
+.sc-calendar tr{
+height:auto;
+}
+
+.sc-calendar td{
+border:1px solid #ddd;
+vertical-align:top;
+padding:2px;
+height:100px;
+font-size:16px;
+overflow-wrap:anywhere;
+word-break:break-word;
+line-height:1;
+}
+
+.sc-calendar strong{
+font-weight:800;
+}
+
+/* =========================
+   NAV / BUTTON BAR
+========================= */
+
+
+
+.sc-nav-btn{
+text-decoration:none;
+font-weight:600;
+padding:6px 10px;
+border-radius:4px;
+background:#f5f5f5;
+color:#333;
+}
+
+.sc-event-link{
+color:inherit !important;
+text-decoration:none !important;
+}
+
+.sc-event[onclick]{
+cursor:pointer;
+}
+
+/* base button */
+.sc-btn{
+border:none;
+padding:8px 14px;
+border-radius:4px;
+font-weight:600;
+cursor:pointer;
+color:#fff;
+}
+
+/* print buttons */
+.sc-btn-print{
+background:var(--sc-primary);
+}
+
+.sc-btn-print:hover{
+opacity:.9;
+}
+
+/* exclude button */
+.sc-btn-exclude{
+background:color-mix(in srgb, var(--sc-primary) 70%, black);
+}
+
+.sc-month-select{
+appearance:none;
+width:auto;
+min-width:110px;
+font-size:16px;
+padding:6px 8px;
+font-weight:500;
+border: 2px solid var(--sc-primary);
+}
+
+.sc-month-label{
+font-weight:700;
+font-size:18px;
+margin-right:6px;
+border: 0px solid var(--sc-primary);
+color: var(--sc-primary);
+padding: 4px;
+border-radius: 4px;
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.sc-calendar{
+width:100%;
+border-collapse:collapse;
+table-layout:fixed;
+margin-top:2px;
+}
+
+.sc-calendar th{
+padding:2px 2px 2px 2px;
+border-bottom:none;
+text-align:center;
+font-weight:700;
+color:var(--sc-primary);
+}
+
+.sc-calendar strong{
+display:inline !important;
+color:var(--sc-primary);
+font-size:15px;
+margin-bottom:2px;
+font-weight:700;
+}
+
+.sc-calendar td .sc-event{
+display:block;
+margin-left:8px;
+}
+
+.sc-event-link{
+color:inherit;
+text-decoration:none;
+}
+
+.sc-calendar-error{
+    padding:20px;
+    text-align:center;
+    font-style:italic;
+    color:#666;
+}
+
+.sc-powered-by{
+text-align:right;
+font-size:10px;
+opacity:.3;
+line-height:1;
+padding:2px 4px 2px 0;
+border:none !important;
+height:auto !important;
+}
+
+.sc-powered-by a{
+color:inherit;
+text-decoration:none;
+}
+
+@media print{
+.sc-powered-by{
+display:none !important;
+}
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.sc-event{
+font-size:14px;
+white-space:normal;
+word-break:break-word;
+overflow-wrap:anywhere;
+padding-left:1px;
+margin-bottom:0;
+line-height:1;
+}
+
+.sc-title{
+font-weight:600;
+color:#222;
+letter-spacing:.1px;
+overflow-wrap:anywhere;
+word-break:break-word;
+}
+
+.sc-time{
+white-space:nowrap;
+font-size:.9em;
+font-weight:400;
+opacity:.7;
+}
+
+.sc-inst{
+font-size:.9em;
+opacity:.5;
+letter-spacing:.1px;
+}
+
+.sc-time,
+.sc-inst{
+white-space:nowrap;
+}
+
+/* indent multi-day continuation */
+.sc-mid-day{
+margin-left:8px;
+opacity:.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.sc-footer{
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:4px;
+}
+
+.sc-footer-qr img{
+width:65px;
+height:auto;
+max-width:65px;
+}
+
+.sc-footer-text{
+flex:1;
+text-align:left;
+}
+
+.sc-footer-info{
+flex:0 0 auto;
+text-align:right;
+max-height:70px;
+overflow:hidden;
+line-height:1;
+}
+
+.sc-info{
+max-height:70px;
+overflow:hidden;
+line-height:1;
+}
+
+.sc-footer-info div{
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+line-height:1;
+}
+
+.sc-phone{
+font-weight:700;
+font-size:16px;
+}
+
+.sc-footer{
+border-top:none;
+padding-top:4px;
+line-height:1.1;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.sc-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+z-index:9999;
+}
+
+.sc-modal-content{
+background:#fff;
+padding:20px;
+max-width:600px;
+margin:60px auto;
+max-height:70vh;
+overflow-y:auto;
+border-radius:6px;
+text-align: left;
+}
+
+.sc-exclude-item.sc-middle{
+margin-left:14px;
+opacity:.85;
+font-size:0.95em;
+}
+
+.sc-exclude-item{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+
+.sc-excluded span{
+text-decoration:line-through;
+opacity:.5;
+}
+
+.sc-modal-footer{
+margin-top:10px;
+text-align:center;
+}
+
+.sc-exclude-empty{
+    padding:16px;
+    text-align:center;
+    color:#666;
+    font-style:italic;
+}
+
+.sc-pro-badge{
+    background:#f39c12;
+    color:#fff;
+    font-size:11px;
+    padding:2px 6px;
+    margin-left:6px;
+    border-radius:3px;
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print {
+
+@page{
+size:letter;
+margin:0.125in;
+}
+	
+body{
+margin:0;
+padding:0;
+}
+	
+.sc-event a{
+pointer-events:none;
+cursor:default;
+color:inherit;
+text-decoration:none;
+}
+
+.sc-calendar td .sc-event{
+margin-left:0 !important;
+padding-left:0 !important;
+}
+
+/* hide UI */
+.sc-print,
+.sc-nav-btn,
+.sc-btn{
+display:none !important;
+}
+
+/* remove site layout */
+header,
+nav,
+footer,
+.sidebar,
+.site-header,
+.site-footer{
+display:none !important;
+}
+
+/* ensure calendar fills page */
+.sc-print-area{
+width:100%;
+margin:0;
+padding:0.05in 0.12in 0 0.12in;
+box-sizing:border-box;
+}
+
+.sc-half{
+height:5.35in;
+flex:0 0 5.35in;
+width:100%;
+overflow:hidden;
+box-sizing:border-box;
+}
+	
+/* PRINT column balancing */
+
+.sc-calendar{
+width:100%;
+table-layout:fixed;
+word-break:break-word;
+}
+	
+.sc-calendar th,
+.sc-calendar td{
+overflow:hidden;
+text-overflow:clip;
+}	
+	
+.sc-month-label,
+.sc-month-select{
+display:none !important;
+}
+}
+
+
+/* =========================
+   2-UP PRINT LAYOUT
+========================= */
+
+.sc-print-sheet{
+display:block;
+width:100%;
+max-width:none;
+}
+
+/* two halves per page */
+
+.sc-half{
+width:100%;
+height:5.35in;
+box-sizing:border-box;
+display:block;
+overflow:hidden;
+position:relative;
+padding:0;
+border-bottom:none;
+}
+
+.sc-sheet-front .sc-half:last-child,
+.sc-sheet-back .sc-half:last-child{
+border-bottom:none;
+}
+
+.sc-print-area{
+width:100%;
+height:100%;
+margin:0 auto;
+padding:0.25in;
+box-sizing:border-box;
+
+display:flex;
+flex-direction:column;
+}
+
+.sc-calendar{
+flex:0 0 auto;
+height:auto;
+}
+
+.sc-header{
+flex-shrink:0;
+}
+
+.sc-footer{
+flex-shrink:0;
+}
+
+/* page breaks */
+
+.sc-empty{
+border:none !important;
+background:none !important;
+}
+
+@media print{
+
+.sc-calendar tr{
+height:auto;
+}
+	
+.sc-calendar td{
+padding:1px 1px 1px 1px !important;
+}
+	
+.sc-calendar{
+width:100% !important;
+min-width:100% !important;
+}
+
+/* prevent page-1 header clipping in 2-up */
+.sc-print-sheet .sc-sheet-front .sc-half:first-child .sc-print-area{
+padding-top:0.12in;
+}
+
+/* tighter margins for 2-up */
+.sc-print-sheet .sc-print-area{
+padding:0.02in 0.08in 0.02in 0.08in;
+}
+
+.sc-print-sheet .sc-half{
+width:100%;
+}
+	
+.sc-sheet-front,
+.sc-sheet-back{
+display:flex;
+flex-direction:column;
+height:auto;
+width:100%;
+page-break-after:always;
+break-after:page;
+}
+	
+.sc-sheet-front,
+.sc-sheet-back{
+display:flex;
+flex-direction:column;
+height:auto;
+page-break-after:always;
+}
+
+.sc-half{
+flex:0 0 5.35in;
+height:5.35in;
+overflow:hidden;
+}
+
+.sc-sheet-front .sc-half:nth-child(2) .sc-print-area{
+padding-top:0.05in;
+}
+	
+/* BACK PAGE LAYOUT */
+
+.sc-back .sc-header{
+display:none !important;
+}
+
+.sc-back .sc-print-area{
+padding-top:0.05in;
+}
+
+}
